@@ -1,0 +1,65 @@
+crop ,State,yield,production_cost,sale_price,profit
+apple,Jammu And Kashmir,10.9,51870,60000,602130
+apple,Himachal Pradesh,1.1,45000,50000,10000
+apple,Uttranchal,1.9,45000,50000,50000
+apple,Arunachal Pradesh,1.3,45000,50000,20000
+apple,Nagaland,3.3,45000,48000,113400
+banana,Maharashtra,65.7,61750,15000,923750
+banana,Tamil Nadu,41.9,61750,15000,566750
+banana,Karnataka,23.8,61750,15000,295250
+banana,Gujarat,34.8,61750,15000,460250
+banana,Andhra Pradesh,22,61750,15000,268250
+banana,Madhya Pradesh,40.5,61750,15000,545750
+banana,Assam,13.9,61750,15000,146750
+banana,Bihar,20,61750,15000,238250
+banana,Kerala,14.1,61750,15000,149750
+grapes,Maharashtra,28.1,87438,7000,109262
+grapes,Karnataka,16.9,87438,7000,30862
+grapes,Tamil Nadu,22,87438,7000,66562
+grapes,Punjab,27,87438,7000,101562
+grapes,Andhra Pradesh,20,87438,7000,52562
+grapes,Haryana,5.7,87438,7000,-47538
+grapes,Madhya Pradesh,25,87438,7000,87562
+grapes,Mizoram,3.2,87438,7000,-65038
+grapes,Jammu And Kashmir,1.6,87438,7000,-76238
+mango,Andhra Pradesh,7.2,51870,20000,91495
+mango,Uttar Pradesh,7.7,51870,20000,102280
+mango,Maharashtra,3.4,51870,20000,16135
+mango,Bihar,9,51870,20000,128101
+mango,Karnataka,9.8,51870,20000,144075
+mango,Tamil Nadu,4,51870,20000,27318
+mango,Odisha,3.8,51870,20000,23135
+mango,West Bengal,8.9,51870,20000,127029
+mango,Gujarat,7,51870,20000,88283
+orange,Maharashtra,9,74100,80000,645900
+orange,Madhya Pradesh,16,74100,80000,1205900
+orange,Assam,11.9,74100,80000,877900
+orange,Orissa,5.6,74100,80000,373900
+orange,West Bengal,9.5,74100,80000,685900
+orange,Rajasthan,6.7,74100,80000,461900
+orange,Nagaland,9.6,74100,80000,693900
+orange,Mizoram,4.7,74100,80000,301900
+papaya,Andhra Pradesh,100,55575,20000,1944425
+papaya,West Bengal,33.5,55575,20000,614425
+papaya,Karnataka,65.5,55575,20000,1254425
+papaya,Orissa,20.3,55575,20000,350425
+papaya,Gujarat,39.4,55575,20000,732425
+papaya,Maharashtra,30,55575,20000,544425
+papaya,Assam,14.8,55575,20000,240425
+papaya,Kerala,4.5,55575,20000,34425
+papaya,Madhya Pradesh,49,55575,20000,924425
+blackgram,,,,,
+chickpea,,,,,
+coconut,,,,,
+coffee,,,,,
+cotton,,,,,
+jute,,,,,
+kidneybeans,,,,,
+lentil,,,,,
+maize,,,,,
+mungbean,,,,,
+pomegranate,,,,,
+rice,,,,,
+tapioca,,,,,
+watermelon,,,,,
+wheat,,,,,

@@ -1,0 +1,9 @@
+﻿soil_type,what_to_grow
+Arid Soil,"cotton,wheat,chickpea,maize,lentil"
+Black Soil,"cotton,wheat,maize,rice,kidneybeans,lentil,mungbean,tapioca,watermelon"
+Cinder Soil,"lentil,blackgram"
+Laterite Soil,"coffee,coconut,mango,papaya"
+Peat Soil,"rice,maize,wheat,jute"
+Red Soil,"cotton,wheat,rice,lentil,apple,mango,banana,grapes,papaya"
+Saline Soil,"cotton,pomegranate,wheat"
+Yellow Soil,"rice,wheat,maize,lentil,mango,orange"

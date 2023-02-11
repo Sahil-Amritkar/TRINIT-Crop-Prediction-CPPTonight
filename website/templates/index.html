@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What2Grow</title>
+    <script>
+				var prev_crops = ['rice', 'maize', 'chickpea', 'kidneybeans', 'mungbean', 'blackgram', 'lentil', 'pomegranate', 'banana', 'mango', 'grapes', 'watermelon', 'apple', 'orange', 'papaya', 'coconut', 'cotton', 'jute', 'coffee', 'wheat', 'tapioca']
+        var states = [{"name": "Andaman And Nicobar", "districts": ["Nicobars", "North And Middle Andaman", "South Andamans"]}, {"name": "Andhra Pradesh", "districts": ["Anantapur", "Chittoor", "East Godavari", "Guntur", "Kadapa", "Krishna", "Kurnool", "Prakasam", "Spsr Nellore", "Srikakulam", "Visakhapatanam", "Vizianagaram", "West Godavari"]}, {"name": "Assam", "districts": ["Baksa", "Barpeta", "Bongaigaon", "Cachar", "Chirang", "Darrang", "Dhemaji", "Dhubri", "Dibrugarh", "Dima Hasao", "Goalpara", "Golaghat", "Hailakandi", "Jorhat", "Kamrup", "Kamrup Metro", "Karbi Anglong", "Karimganj", "Kokrajhar", "Lakhimpur", "Marigaon", "Nagaon", "Nalbari", "Sivasagar", "Sonitpur", "Tinsukia", "Udalguri"]}, {"name": "Chattisgarh", "districts": ["Balod", "Baloda Bazar", "Balrampur", "Bastar", "Bemetara", "Bijapur", "Bilaspur", "Dantewada", "Dhamtari", "Durg", "Gariyaband", "Janjgir-Champa", "Jashpur", "Kabirdham", "Kanker", "Kondagaon", "Korba", "Korea", "Mahasamund", "Mungeli", "Narayanpur", "Raigarh", "Raipur", "Rajnandgaon", "Sukma", "Surajpur", "Surguja"]}, {"name": "Goa", "districts": ["North Goa", "South Goa"]}, {"name": "Gujarat", "districts": ["Ahmadabad", "Amreli", "Anand", "Banas Kantha", "Bharuch", "Bhavnagar", "Dang", "Dohad", "Gandhinagar", "Jamnagar", "Junagadh", "Kachchh", "Kheda", "Mahesana", "Narmada", "Navsari", "Panch Mahals", "Patan", "Porbandar", "Rajkot", "Sabar Kantha", "Surat", "Surendranagar", "Tapi", "Vadodara", "Valsad"]}, {"name": "Haryana", "districts": ["Ambala", "Bhiwani", "Faridabad", "Fatehabad", "Gurgaon", "Hisar", "Jhajjar", "Jind", "Kaithal", "Karnal", "Kurukshetra", "Mahendragarh", "Mewat", "Palwal", "Panchkula", "Panipat", "Rewari", "Rohtak", "Sirsa", "Sonipat", "Yamunanagar"]}, {"name": "Himachal Pradesh", "districts": ["Bilaspur", "Chamba", "Hamirpur", "Kangra", "Kinnaur", "Kullu", "Lahul And Spiti", "Mandi", "Shimla", "Sirmaur", "Solan", "Una"]}, {"name": "Jammu And Kashmir", "districts": ["Anantnag", "Badgam", "Bandipora", "Baramulla", "Doda", "Ganderbal", "Jammu", "Kargil", "Kathua", "Kishtwar", "Kulgam", "Kupwara", "Leh Ladakh", "Poonch", "Pulwama", "Rajauri", "Ramban", "Reasi", "Samba", "Shopian", "Srinagar", "Udhampur"]}, {"name": "Karnataka", "districts": ["Bagalkot", "Bangalore Rural", "Belgaum", "Bellary", "Bengaluru Urban", "Bidar", "Bijapur", "Chamarajanagar", "Chikballapur", "Chikmagalur", "Chitradurga", "Dakshin Kannad", "Davangere", "Dharwad", "Gadag", "Gulbarga", "Hassan", "Haveri", "Kodagu", "Kolar", "Koppal", "Mandya", "Mysore", "Raichur", "Ramanagara", "Shimoga", "Tumkur", "Udupi", "Uttar Kannad", "Yadgir"]}, {"name": "Kerala", "districts": ["Alappuzha", "Ernakulam", "Idukki", "Kannur", "Kasaragod", "Kollam", "Kottayam", "Kozhikode", "Malappuram", "Palakkad", "Pathanamthitta", "Thiruvananthapuram", "Thrissur", "Wayanad"]}, {"name": "Madhya Pradesh", "districts": ["Agar Malwa", "Alirajpur", "Anuppur", "Ashoknagar", "Balaghat", "Barwani", "Betul", "Bhind", "Bhopal", "Burhanpur", "Chhatarpur", "Chhindwara", "Damoh", "Datia", "Dewas", "Dhar", "Dindori", "Guna", "Gwalior", "Harda", "Hoshangabad", "Indore", "Jabalpur", "Jhabua", "Katni", "Khandwa", "Khargone", "Mandla", "Mandsaur", "Morena", "Narsinghpur", "Neemuch", "Panna", "Raisen", "Rajgarh", "Ratlam", "Rewa", "Sagar", "Satna", "Sehore", "Seoni", "Shahdol", "Shajapur", "Sheopur", "Shivpuri", "Sidhi", "Singrauli", "Tikamgarh", "Ujjain", "Umaria", "Vidisha"]}, {"name": "Maharashtra", "districts": ["Ahmednagar", "Akola", "Amravati", "Aurangabad", "Beed", "Bhandara", "Buldhana", "Chandrapur", "Dhule", "Gadchiroli", "Gondia", "Hingoli", "Jalgaon", "Jalna", "Kolhapur", "Latur", "Mumbai", "Nagpur", "Nanded", "Nandurbar", "Nashik", "Osmanabad", "Palghar", "Parbhani", "Pune", "Raigad", "Ratnagiri", "Sangli", "Satara", "Sindhudurg", "Solapur", "Thane", "Wardha", "Washim", "Yavatmal"]}, {"name": "Manipur", "districts": ["Bishnupur", "Chandel", "Churachandpur", "Imphal East", "Imphal West", "Senapati", "Tamenglong", "Thoubal", "Ukhrul"]}, {"name": "Meghalaya", "districts": ["East Garo Hills", "East Jaintia Hills", "East Khasi Hills", "North Garo Hills", "Ri Bhoi", "South Garo Hills", "South West Garo Hills", "South West Khasi Hills", "West Garo Hills", "West Jaintia Hills", "West Khasi Hills"]}, {"name": "Nagaland", "districts": ["Dimapur", "Kiphire", "Kohima", "Longleng", "Mokokchung", "Mon", "Peren", "Phek", "Tuensang", "Wokha", "Zunheboto"]}, {"name": "Odisha", "districts": ["Anugul", "Balangir", "Baleshwar", "Bargarh", "Bhadrak", "Boudh", "Cuttack", "Deogarh", "Dhenkanal", "Gajapati", "Ganjam", "Jagatsinghapur", "Jajapur", "Jharsuguda", "Kalahandi", "Kandhamal", "Kendrapara", "Kendujhar", "Khordha", "Koraput", "Malkangiri", "Mayurbhanj", "Nabarangpur", "Nayagarh", "Nuapada", "Puri", "Rayagada", "Sambalpur", "Sonepur", "Sundargarh"]}, {"name": "Pondicherry", "districts": ["Karaikal", "Mahe", "Pondicherry", "Yanam"]}, {"name": "Punjab", "districts": ["Amritsar", "Barnala", "Bathinda", "Faridkot", "Fatehgarh Sahib", "Fazilka", "Firozepur", "Gurdaspur", "Hoshiarpur", "Jalandhar", "Kapurthala", "Ludhiana", "Mansa", "Moga", "Muktsar", "Nawanshahr", "Pathankot", "Patiala", "Rupnagar", "S.A.S Nagar", "Sangrur", "Tarn Taran"]}, {"name": "Rajasthan", "districts": ["Ajmer", "Alwar", "Banswara", "Baran", "Barmer", "Bharatpur", "Bhilwara", "Bikaner", "Bundi", "Chittorgarh", "Churu", "Dausa", "Dholpur", "Dungarpur", "Ganganagar", "Hanumangarh", "Jaipur", "Jaisalmer", "Jalore", "Jhalawar", "Jhunjhunu", "Jodhpur", "Karauli", "Kota", "Nagaur", "Pali", "Pratapgarh", "Rajsamand", "Sawai Madhopur", "Sikar", "Sirohi", "Tonk", "Udaipur"]}, {"name": "Tamil Nadu", "districts": ["Ariyalur", "Coimbatore", "Cuddalore", "Dharmapuri", "Dindigul", "Erode", "Kanchipuram", "Kanniyakumari", "Karur", "Krishnagiri", "Madurai", "Nagapattinam", "Namakkal", "Perambalur", "Pudukkottai", "Ramanathapuram", "Salem", "Sivaganga", "Thanjavur", "The Nilgiris", "Theni", "Thiruvallur", "Thiruvarur", "Tiruchirappalli", "Tirunelveli", "Tiruppur", "Tiruvannamalai", "Tuticorin", "Vellore", "Villupuram", "Virudhunagar"]}, {"name": "Telangana", "districts": ["Adilabad", "Hyderabad", "Karimnagar", "Khammam", "Mahbubnagar", "Medak", "Nalgonda", "Nizamabad", "Rangareddi", "Warangal"]}, {"name": "Tripura", "districts": ["Dhalai", "Gomati", "Khowai", "North Tripura", "Sepahijala", "South Tripura", "Unakoti", "West Tripura"]}, {"name": "Uttar Pradesh", "districts": ["Agra", "Aligarh", "Allahabad", "Ambedkar Nagar", "Amethi", "Amroha", "Auraiya", "Azamgarh", "Baghpat", "Bahraich", "Ballia", "Balrampur", "Banda", "Barabanki", "Bareilly", "Basti", "Bijnor", "Budaun", "Bulandshahr", "Chandauli", "Chitrakoot", "Deoria", "Etah", "Etawah", "Faizabad", "Farrukhabad", "Fatehpur", "Firozabad", "Gautam Buddha Nagar", "Ghaziabad", "Ghazipur", "Gonda", "Gorakhpur", "Hamirpur", "Hapur", "Hardoi", "Hathras", "Jalaun", "Jaunpur", "Jhansi", "Kannauj", "Kanpur Dehat", "Kanpur Nagar", "Kasganj", "Kaushambi", "Kheri", "Kushi Nagar", "Lalitpur", "Lucknow", "Maharajganj", "Mahoba", "Mainpuri", "Mathura", "Mau", "Meerut", "Mirzapur", "Moradabad", "Muzaffarnagar", "Pilibhit", "Pratapgarh", "Rae Bareli", "Rampur", "Saharanpur", "Sambhal", "Sant Kabeer Nagar", "Sant Ravidas Nagar", "Shahjahanpur", "Shamli", "Shravasti", "Siddharth Nagar", "Sitapur", "Sonbhadra", "Sultanpur", "Unnao", "Varanasi"]}, {"name": "Uttrakhand", "districts": ["Almora", "Bageshwar", "Chamoli", "Champawat", "Dehradun", "Haridwar", "Nainital", "Pauri Garhwal", "Pithoragarh", "Rudra Prayag", "Tehri Garhwal", "Udam Singh Nagar", "Uttar Kashi"]}, {"name": "West Bengal", "districts": ["24 Paraganas North", "24 Paraganas South", "Bankura", "Bardhaman", "Birbhum", "Coochbehar", "Darjeeling", "Dinajpur Dakshin", "Dinajpur Uttar", "Hooghly", "Howrah", "Jalpaiguri", "Maldah", "Medinipur East", "Medinipur West", "Murshidabad", "Nadia", "Purulia"]}];
+    </script>
+		<link rel="stylesheet" href="../static/style/dropdown.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+	<div class="mainBody">
+		<div class="heading">
+			<div class="logo">
+				<img src="../static/images/logo_flip.png" alt="logo" class="logo_image_flip">
+				<h1>What2Grow</h1>
+				<img src="../static/images/logo.png" alt="logo" class="logo_image">
+			</div>
+			<h4>
+				built for TRINIT Hackathon by team CPPTonight
+			</h4>
+		</div>
+
+		<div class="form_values">
+			<form action="/upload" method="post" enctype="multipart/form-data" class="form_sub">
+				<div class="dropdowns">
+					<select name="state" id="stateSelect" class="dropdown">
+						<option>Select State</option>
+					</select>
+					<select class="dropdown" name="district" id="districtSelect" disabled>
+						<option>Select District</option>
+					</select>
+					<select name="season" id="season" class="dropdown">
+						<option>Select Season</option>
+						<option value="Whole Year">Whole Year</option>
+						<option value="Kharif">Kharif</option>
+						<option value="Rabi">Rabi</option>
+						<option value="Summer">Summer</option>
+						<option value="Autumn">Autumn</option>
+						<option value="Winter">Winter</option>
+					</select>
+					<select id="prevCrops" class="dropdown" name="prev_crop" >
+						<option value>Select previous crop grown</option>
+					</select>
+				</div>
+				<div class="sliders_and_image">
+					<div class="image_input">
+						<h3 class="optional_heading">
+							Upload Soil Image
+						</h3>
+						<input id="inputImage" type="file" name="image" accept="image/*" class="image_align">
+						<img id="previewImage" class="hidden">
+					</div>
+					<div class="sliders">
+						<h3 class="optional_heading">
+							Optional Values
+						</h3>
+						<div class="nitrogen">
+							<label>Nitrogen Content: <span id="slider1Value">0</span></label>
+						</div>
+							<input name="nitrogen_content" type="range" min="0" max="250" value="0" id="slider1" oninput="updateValue(this)">				
+						<div class="phosphorus">
+							<label>Phosphorus Content: <span id="slider2Value">0</span></label>
+						</div>
+							<input name="phosphorus_content" type="range" min="0" max="250" value="0" id="slider2" oninput="updateValue(this)">		
+						<div class="Potassium">
+							<label>Potassium Content: <span id="slider3Value">0</span></label>
+						</div>
+							<input name="potassium_content" type="range" min="0" max="250" value="0" id="slider3" oninput="updateValue(this)">		
+						<div class="pH">
+							<label>pH level: <span id="slider4Value">0</span></label>
+						</div>
+							<input name="pH_value" type="range" min="0" max="14" value="0" step="0.2" id="slider4" oninput="updateValue(this)">		
+					</div>
+				</div>
+				<div class="submit_button">
+					<input type="submit" value="Get Recommendation" class="btn">
+				</div>
+			</form>
+		</div>
+	</div>
+    <script>
+      var stateSelect = document.getElementById("stateSelect");
+      var districtSelect = document.getElementById("districtSelect");
+      for (var i = 0; i < states.length; i++) {
+        var state = states[i];
+        var el = document.createElement("option");
+        el.textContent = state.name;
+        el.value = state.name;
+        stateSelect.appendChild(el);
+      }
+      stateSelect.addEventListener("change", function() {
+        var selectedState = states.find(function(state) {
+          return state.name === stateSelect.value;
+        });
+        while (districtSelect.firstChild) {
+          districtSelect.removeChild(districtSelect.firstChild);
+        }
+        for (var i = 0; i < selectedState.districts.length; i++) {
+          var district = selectedState.districts[i];
+          var el = document.createElement("option");
+          el.textContent = district;
+          el.value = district;
+          districtSelect.appendChild(el);
+        }
+        districtSelect.disabled = false;
+      });
+			function updateValue(slider) {
+				document.getElementById(slider.id + "Value").innerHTML = slider.value;
+			}
+
+			var select2 = document.getElementById("prevCrops");
+      for (var i = 0; i < prev_crops.length; i++) {
+        var opt = prev_crops[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        select2.appendChild(el);
+      }
+	  document.getElementById("inputImage").addEventListener("change", function() {
+		var preview = document.getElementById("previewImage");
+		var file = document.querySelector("input[type=file]").files[0];
+		var reader = new FileReader();
+
+		reader.addEventListener("load", function() {
+			preview.src = reader.result;
+			preview.classList.remove("hidden");
+		}, false);
+
+		if (file) {
+			reader.readAsDataURL(file);
+		}
+		});
+    </script>
+
+</body>
+</html>

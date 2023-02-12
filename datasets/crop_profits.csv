@@ -1,4 +1,4 @@
-crop ,State,yield,production_cost,sale_price,profit
+crop,State,yield,production_cost,sale_price,profit
 apple,Jammu And Kashmir,10.9,51870,60000,602130
 apple,Himachal Pradesh,1.1,45000,50000,10000
 apple,Uttranchal,1.9,45000,50000,50000
@@ -48,18 +48,18 @@ papaya,Maharashtra,30,55575,20000,544425
 papaya,Assam,14.8,55575,20000,240425
 papaya,Kerala,4.5,55575,20000,34425
 papaya,Madhya Pradesh,49,55575,20000,924425
-blackgram,,,,,
-chickpea,,,,,
-coconut,,,,,
-coffee,,,,,
-cotton,,,,,
-jute,,,,,
-kidneybeans,,,,,
-lentil,,,,,
-maize,,,,,
-mungbean,,,,,
-pomegranate,,,,,
-rice,,,,,
-tapioca,,,,,
-watermelon,,,,,
-wheat,,,,,
+blackgram,,,,,77000
+chickpea,,,,,40000
+coconut,,,,,60000
+coffee,,,,,200000
+cotton,,,,,157000
+jute,,,,,20000
+kidneybeans,,,,,50000
+lentil,,,,,75000
+maize,,,,,100000
+mungbean,,,,,20000
+pomegranate,,,,,250000
+rice,,,,,50000
+tapioca,,,,,55000
+watermelon,,,,,110000
+wheat,,,,,50000

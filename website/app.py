@@ -219,10 +219,25 @@ def upload():
 
 	# # Print the best crops
 	# print("Best crops to plant: ", best_crops)
-	
-	print("FINAL OP", final_op)
-	return final_op
 
+	#ranking by profit
+	#profit_rank=pickle.load(open('model_pickles/Profit_Rank_model.pickle', 'rb')) pickle giving problems
+	profit_rank={'papaya': 1, 'orange': 2, 'banana': 3, 'pomegranate': 4, 'coffee': 5, 'apple': 6, 'cotton': 7, 'watermelon': 8, 'maize': 9, 'mango': 10, 'blackgram': 11, 'lentil': 12, 'coconut': 13, 'tapioca': 14, 'kidneybeans': 15, 'rice': 16, 'wheat': 17, 'chickpea': 18, 'grapes': 19, 'jute': 20, 'mungbean': 21}
+	final_op=sorted(final_op, key=lambda x: profit_rank[x], reverse=False)
+
+	soil_desc=pd.read_csv('datasets/soil_description.csv')
+	desc_dic={'Arid Soil': 'Arid soil is a type of soil found in areas with low rainfall and high evaporation rates, resulting in limited water availability. It is characterized by low organic matter, high levels of salts and minerals, and a compact, rocky structure.', 
+				'Black Soil': 'Black soil, also known as regur soil, is a type of fertile soil that is rich in organic matter and has a dark color due to the presence of iron and aluminum oxides. It is found in regions with high rainfall.', 
+				'Cinder Soil': 'Cinder soil is a type of soil that is rich in volcanic ash and cinders and is typically found near volcanic areas. It is well-drained, has good water-holding capacity, and is alkaline in nature.', 
+				'Laterite Soil': 'Laterite soil is a type of soil that is found in tropical regions with high rainfall and high temperatures. It is rich in iron and aluminum oxides and is typically red or yellow in color.', 
+				'Peat Soil': 'Peat soil is a type of soil that is formed from partially decomposed organic matter, such as plant debris and moss. Peat soil is known for its high organic matter content and acidity.', 
+				'Red Soil': 'Red soil is a type of soil that is characterized by its reddish-brown color and is commonly found in tropical and subtropical regions. It is generally fertile, with a good balance of nutrients and water-holding capacity.', 
+				'Saline Soil': 'Saline soil is a type of soil that has high levels of salt, making it difficult for most crops to grow. It is commonly found in arid and semi-arid regions and is caused by high evaporation rates, poor drainage, and the accumulation of salts over time.', 
+				'Yellow Soil': 'Yellow soil is a type of soil that is characterized by its yellowish color, which is due to the presence of iron and aluminum oxides. It is typically found in tropical and subtropical regions and is known for its good water-holding capacity and fertility.'}
+	desc=desc_dic[input_soil]
+	print("FINAL OP", final_op)
+	result=[input_soil,desc,final_op]
+	return render_template('index.html', result=result)
 
 
 
